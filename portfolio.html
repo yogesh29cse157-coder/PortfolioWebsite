@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal portfolio of a computer science student and developer.">
+<title>Yogesh Prajapati | Developer Portfolio</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a30;--panel2:#17213b;--text:#eef2ff;--muted:#aab5d0;--accent:#7c8cff;--accent2:#42d6c5;--line:rgba(255,255,255,.1);--shadow:0 18px 50px rgba(0,0,0,.25)}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 80% 0%,#1c2851 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:1.1rem;font-weight:800;letter-spacing:.3px}.logo span{color:var(--accent2)}
+nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}nav a{font-size:.86rem;color:var(--muted);transition:.2s}nav a:hover,nav a.active{color:var(--text)}
+.menu-btn{display:none;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+section{padding:86px 0;scroll-margin-top:72px}.eyebrow{color:var(--accent2);text-transform:uppercase;letter-spacing:2px;font-size:.76rem;font-weight:800}
+h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.04;letter-spacing:-2px;margin:14px 0 22px}h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:10px 0 14px;letter-spacing:-.8px}h3{margin-bottom:8px}.gradient{background:linear-gradient(100deg,#a7b2ff,#50e3cf);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.08rem;color:var(--muted);max-width:660px}.section-intro{color:var(--muted);max-width:700px;margin-bottom:32px}
+.hero{min-height:calc(90vh - 72px);display:grid;grid-template-columns:1.35fr .65fr;align-items:center;gap:50px;padding-top:70px;padding-bottom:70px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:750;border:1px solid var(--line);transition:transform .2s,background .2s;cursor:pointer}.btn:hover{transform:translateY(-3px)}.primary{background:linear-gradient(120deg,var(--accent),#5a70ed);border:0;color:white}.secondary{background:rgba(255,255,255,.04)}
+.quickfacts{display:flex;gap:22px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.quickfacts strong{color:var(--text)}
+.profile-card{position:relative;background:linear-gradient(145deg,rgba(124,140,255,.22),rgba(66,214,197,.08));border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);overflow:hidden}
+.avatar{width:155px;height:155px;border-radius:50%;margin:10px auto 20px;display:grid;place-items:center;font-size:3rem;font-weight:900;color:#10162a;background:linear-gradient(135deg,#a7b2ff,#50e3cf);border:7px solid rgba(255,255,255,.12)}
+.profile-card{text-align:center}.profile-card p{color:var(--muted);font-size:.92rem}.status{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:7px 12px;font-size:.8rem;color:var(--muted)}.dot{width:8px;height:8px;background:var(--accent2);border-radius:50%}
+.grid{display:grid;gap:18px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:18px;padding:23px;transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-4px);border-color:rgba(124,140,255,.55)}.card p{color:var(--muted);margin-bottom:0}.icon{width:43px;height:43px;display:grid;place-items:center;background:rgba(124,140,255,.14);border-radius:12px;font-size:1.25rem;margin-bottom:16px}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.pill{font-size:.78rem;color:#d9def7;background:rgba(124,140,255,.12);border:1px solid rgba(124,140,255,.22);border-radius:99px;padding:5px 10px}
+.skill-group h3{display:flex;align-items:center;gap:10px}.skill-list{display:flex;gap:9px;flex-wrap:wrap}.skill{background:var(--panel2);border:1px solid var(--line);padding:8px 12px;border-radius:10px;color:#dce4ff;font-size:.9rem}
+.project-card{display:flex;flex-direction:column;min-height:100%}.project-top{font-size:2rem;margin-bottom:10px}.project-card .pills{margin-bottom:18px}.project-links{display:flex;gap:14px;margin-top:auto;padding-top:12px;color:var(--accent2);font-weight:700;font-size:.9rem}
+.timeline{border-left:2px solid rgba(124,140,255,.4);margin-left:8px;padding-left:24px;display:grid;gap:22px}.timeline-item{position:relative}.timeline-item:before{content:"";position:absolute;left:-32px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 5px rgba(66,214,197,.12)}.timeline-item small{color:var(--accent2);font-weight:800}.timeline-item p{color:var(--muted);margin-bottom:0}
+.contact-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}.contact-item{padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted)}.contact-item strong{display:block;color:var(--text)}form{display:grid;gap:12px}input,textarea{width:100%;background:#0d1428;color:var(--text);border:1px solid var(--line);border-radius:11px;padding:13px 14px;font:inherit}textarea{min-height:135px;resize:vertical}input:focus,textarea:focus{outline:2px solid rgba(124,140,255,.5);border-color:transparent}.form-note{font-size:.82rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.88rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.backtop{color:var(--accent2)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){nav{gap:10px}nav a{font-size:.78rem}.hero{grid-template-columns:1fr .7fr;gap:24px}.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.menu-btn{display:block}nav{display:none;position:absolute;left:0;right:0;top:72px;padding:18px 5%;background:#0b1020;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}nav.open{display:flex}nav a{font-size:.95rem}.hero{grid-template-columns:1fr;min-height:auto;padding-top:60px}.profile-card{max-width:400px}.grid-2,.grid-3,.contact-wrap{grid-template-columns:1fr}section{padding:65px 0}h1{letter-spacing:-1px}.quickfacts{gap:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">YOGESH PRAJAPATI<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰ Menu</button>
+    <nav id="navLinks" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#hackathons">Hackathons</a><a href="#education">Education</a><a href="#certifications">Certificates</a><a href="#achievements">Achievements</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero container" id="home">
+  <div class="reveal">
+    <span class="eyebrow">Welcome to my portfolio</span>
+    <h1>Hi, I'm <br><span class="gradient">Yogesh Prajapati.</span><br>Developer in progress.</h1>
+    <p class="lead">A Computer Science student who enjoys building useful digital experiences, solving problems with code, and exploring AI-powered solutions.</p>
+    <div class="actions"><a class="btn primary" href="#projects">Explore my projects ↗</a><a class="btn secondary" href="#contact">Let's connect</a></div>
+    <div class="quickfacts"><span>⌘ <strong>Problem solving</strong></span><span>✦ <strong>Web development</strong></span><span>◎ <strong>AI & innovation</strong></span></div>
+  </div>
+  <aside class="profile-card reveal">
+    <div class="avatar" aria-label="Initials YP">YP</div>
+    <h3>Yogesh Prajapati</h3>
+    <p>Computer Science Student · Aspiring Software Developer</p>
+    <span class="status"><span class="dot"></span> Open to learning & collaboration</span>
+    <div class="pills" style="justify-content:center"><span class="pill">Python</span><span class="pill">Java</span><span class="pill">HTML/CSS/JS</span></div>
+  </aside>
+</section>
+
+<section id="about"><div class="container">
+  <span class="eyebrow">01 · About</span><h2>A little about <span class="gradient">me</span></h2>
+  <p class="section-intro">I am a student and developer building my foundation in programming, web technologies, and software design. I like turning real-world problems into practical, easy-to-use applications.</p>
+  <div class="grid grid-3">
+    <article class="card reveal"><div class="icon">🎯</div><h3>My goal</h3><p>Grow into a capable software developer by building projects, learning consistently, and writing clear, maintainable code.</p></article>
+    <article class="card reveal"><div class="icon">🧠</div><h3>What I enjoy</h3><p>Problem solving, programming fundamentals, responsive websites, AI ideas, and learning how systems work.</p></article>
+    <article class="card reveal"><div class="icon">🤝</div><h3>How I work</h3><p>Curious, collaborative, open to feedback, and ready to improve through hands-on practice.</p></article>
+  </div>
+</div></section>
+
+<section id="skills"><div class="container">
+  <span class="eyebrow">02 · Skills</span><h2>Tools I use to <span class="gradient">build</span></h2>
+  <div class="grid grid-2">
+    <article class="card skill-group reveal"><h3>💻 Programming languages</h3><div class="skill-list"><span class="skill">C</span><span class="skill">Python</span><span class="skill">Java</span><span class="skill">Python</span></article>
+    <article class="card skill-group reveal"><h3>🌐 Web development</h3><div class="skill-list"><span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">Java Script</span></div></article>
+    <article class="card skill-group reveal"><h3>🗄️ Databases & backend</h3><div class="skill-list"><span class="skill">SQL / MySQL</span><span class="skill">Python backend</span><span class="skill">Node.js</span></div></article>
+    <article class="card skill-group reveal"><h3>🧰 Tools & concepts</h3><div class="skill-list"><span class="skill">VS Code</span><span class="skill">Git & GitHub</span><span class="skill">OOP</span><span class="skill">DSA</span><span class="skill">Canva</span></div></article>
+  </div>
+</div></section>
+
+<section id="projects"><div class="container">
+  <span class="eyebrow">03 · Projects</span><h2>Things I've <span class="gradient">worked on</span></h2>
+  <div class="grid grid-3">
+    <article class="card project-card reveal"><div class="project-top">🤖</div><h3>AI-powered BIS Intelligent Assistant</h3><p>A prototype concept to help users explore Indian Standards, product requirements, BIS services, and certification guidance using natural-language queries.</p><div class="pills"><span class="pill">Python</span><span class="pill">HTML/CSS/JS</span><span class="pill">AI / NLP</span></div><div class="project-links"><a href="#contact">Project details ↗</a><a href="https://github.com/yogesh29 cse157-coder/bis-backend">GitHub link ↗</a></div></article>
+    <article class="card project-card reveal"><div class="project-top">📋</div><h3>Indian Standards Recommendation Engine</h3><p>A concept for recommending potentially relevant Indian Standards from product descriptions or procurement specifications, with source references for verification.</p><div class="pills"><span class="pill">Python</span><span class="pill">Search</span><span class="pill">Recommendation</span></div><div class="project-links"><a href="#contact">Project details ↗</a><a href="https://github.com/yogesh29 cse157-coder/bis-backend">GitHub link ↗</a></div></article>
+    <article class="card project-card reveal"><div class="project-top">🌐</div><h3>Responsive Portfolio Website</h3><p>A personal website that presents skills, projects, education, achievements, and contact details in a responsive layout.</p><div class="pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span></div><div class="project-links"><a href="#home">Live page ↗</a><a href="#contact">Source code ↗</a></div></article>
+  </div>
+</div></section>
+
+<section id="hackathons"><div class="container">
+  <span class="eyebrow">04 · Hackathons & activities</span><h2>Learning by <span class="gradient">building</span></h2>
+  <div class="grid grid-2">
+    <article class="card reveal"><div class="icon">🚀</div><h3>Smart India Hackathon (SIH)</h3><p>Working on a BIS-related AI assistant / Indian Standards recommendation concept to make standards information easier to discover.</p><div class="pills"><span class="pill">Research</span><span class="pill">Prototype</span><span class="pill">Teamwork</span></div></article>
+    <article class="card reveal"><div class="icon">👥</div><h3>Parentathon</h3><p>Developed a product verification tool for parents and constructors to instantly check if an item is locally sourced or BIS-certified. The platform provides detailed product descriptions to ensure safe.</p><div class="pills"><span class="pill">Research</span><span class="pill">Planning</span><span class="pill">Prototype</span></div></article>
+  </div>
+</div></section>
+
+<section id="education"><div class="container">
+  <span class="eyebrow">05 · Education</span><h2>My learning <span class="gradient">journey</span></h2>
+  <div class="card reveal"><div class="timeline">
+    <div class="timeline-item"><small>2025 – PRESENT</small><h3>Bachelor of Technology </h3><p><strong>Samrat Ashok Technological Institute Vidisha</strong></p><p>Branch - Computer Science Engineering</p></div>
+    <div class="timeline-item"><small>2024 – 2025</small><h3>Industrial Training Institute(ITI)</h3><p><strong>ITI Kohka</strong> </p><p>Trade - Computer Operator And Programming Assistance </p></div>
+    <div class="timeline-item"><small>2024 </small><h3>Higher Secondary Education</h3><p><strong>Kendriya Vidyalaya Nowrozabad</strong> </p></div>
+  </div></div>
+</div></section>
+
+<section id="certifications"><div class="container">
+  <span class="eyebrow">06 · Certifications</span><h2><span class="gradient">Certificates</span></h2>
+  <div class="grid grid-3">
+    <article class="card reveal"><div class="icon">🧑‍💻</div><h3>Hackathon Certificate</h3><p>SIH Hackathon and Parentathon</p><div class="pills"><span class="pill">2026</span></div></article>
+    <article class="card reveal"><div class="icon">📜</div><h3>Internship Certificate</h3><p>Critical & Logical Thinking</p><div class="pills"><span class="pill">2026</span></div></article>
+    <article class="card reveal"><div class="icon">🧠</div><h3>Other Activities Certificate</h3><p>Samrat Utsav - 2026 , BIS Standard Club and Disater Management</p><div class="pills"><span class="pill">2025-26</span></div></article>
+  </div>
+</div></section>
+
+<section id="achievements"><div class="container">
+  <span class="eyebrow">07 · Achievements</span><h2>Milestones & <span class="gradient">highlights</span></h2>
+  <div class="grid grid-3">
+    <article class="card reveal"><div class="icon">🏆</div><h3>Competitions</h3><p>Selected in the SIH 2026 internal round with the BIS Intelligent Assistant project. Participated in football and kabaddi competitions.</p></article>
+    <article class="card reveal"><div class="icon">📈</div><h3>Learning progress</h3><p>Developed skills in HTML, CSS, JavaScript, Python, DSA, responsive web design, API integration, and graphic design through practical projects.</p></article>
+    <article class="card reveal"><div class="icon">🌟</div><h3>Recognition</h3><p>Nodal football competition representing our college , and college newsletter design contributor.</p></article>
+  </div>
+</div></section>
+
+<section id="resume"><div class="container">
+  <span class="eyebrow">08 · Resume</span><h2>A quick look at my <span class="gradient">experience</span></h2>
+  <div class="card reveal" style="display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap"><div><h3> 📜 LATEST RESUME PDF </h3></div><a class="btn primary" href="D:\Resume.docx" download>⬇ Download Resume</a></div>
+</div></section>
+
+<section id="contact"><div class="container">
+  <span class="eyebrow">09 · Contact</span><h2>Let's build something <span class="gradient">useful</span></h2>
+  <p class="section-intro">Have a project idea, internship opportunity, or a reason to collaborate? Send a message or connect through your professional profiles.</p>
+  <div class="contact-wrap">
+    <div class="card reveal"><h3>Contact details</h3><div class="contact-item">✉️ <strong>Email</strong><span><a class="gamil" href="mailto:yogesh29cse157@gamil.com">yogesh29cse157@gmail.com</a></span></div><div class="contact-item">💼 <strong>LinkedIn</strong><span><a class="LinkedIn" href="https://www.linkedin.com/in/yogesh-prajapati-b96100380?utm_source=share_via&utm_content=profile&utm_medium=member_android">https://www.linkedin.com/in/yogesh-prajapati-b96100380?utm_source=share_via&utm_content=profile&utm_medium=member_android</a></span></div><div class="contact-item">🐙 <strong>GitHub</strong><span><a class="GitHub" href="https://github.com/yogesh29cse157-coder">github.com/yogesh29cse157-coder</a></span></div></div>
+    <div class="card reveal"><form id="contactForm"><label for="name">Your name</label><input id="name" name="name" placeholder="Enter your name" required><label for="email">Your email</label><input id="email" name="email" type="email" placeholder="you@example.com" required><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me a little about your idea..." required></textarea><button class="btn primary" type="submit">Prepare email ↗</button><p id="formNote" class="form-note"></p></form></div>
+  </div>
+</div></section>
+</main>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Yogesh Prajapati · Built with HTML, CSS & JavaScript</span><a class="backtop" href="#home">Back to top ↑</a></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open?'true':'false')});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const sections=[...document.querySelectorAll('main section[id]')], links=[...nav.querySelectorAll('a')];
+window.addEventListener('scroll',()=>{let current='home';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-130)current=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current))});
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),message=document.getElementById('message').value.trim();const subject=encodeURIComponent('Portfolio contact from '+name);const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message);window.location.href='mailto:yogesh29cse157@gmail.com?subject='+subject+'&body='+body;document.getElementById('formNote').textContent='Your email app should open with the message prepared. Replace the sample email address in the code first.'});
+</script>
+</body>
+</html>
